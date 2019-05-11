@@ -59,8 +59,7 @@ const commonConfig = {
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtractPlugin({filename: 'style.css'}),
-    new HtmlWebpackPlugin({template: 'index.html'}),
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({template: 'index.html'})
   ],
 
   devServer: {
@@ -76,6 +75,10 @@ const commonConfig = {
     }
   }
 };
+
+if (dev) {
+  commonConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
+}
 
 if (withLinter) {
   commonConfig.module.rules.push({
