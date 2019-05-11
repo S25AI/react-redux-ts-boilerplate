@@ -12,7 +12,7 @@ const commonConfig = {
   devtool: dev ? 'cheap-module-eval-source-map' : false,
   mode: dev ? 'development' : 'production',
   context: path.resolve(__dirname, 'src'),
-  entry: './app',
+  entry: dev ? ['react-hot-loader/patch', './app'] : './app',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: "bundle.js",
