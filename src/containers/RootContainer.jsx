@@ -1,23 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { changeText } from '../actions/test';
-import { Root } from '../components/Root';
+import { BrowserRouter } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import routes from '../routes';
 
-const RootContainer = props => <Root {...props} />;
+function RootContainer() {
+  return (
+    <BrowserRouter>
+      { renderRoutes(routes) }
+    </BrowserRouter>
+  );
+}
 
-RootContainer.displayName = 'RootContainer';
-
-const mapStateToProps = ({ test }) => ({
-  title: test.title
-});
-
-const mapDispatchToProps = dispatch => ({
-  changeText: title => dispatch(changeText(title))
-});
-
-const EnchancedRootContainer = connect(mapStateToProps, mapDispatchToProps)(RootContainer);
-
-export {
-  RootContainer,
-  EnchancedRootContainer
-};
+export { RootContainer };
