@@ -16,11 +16,14 @@ const commonConfig = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: "bundle.js",
+    publicPath: '/'
   },
 
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: {}
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
 
   module: {
@@ -66,6 +69,7 @@ const commonConfig = {
     host: 'localhost',
     port: 3002,
     contentBase: path.resolve(__dirname, 'build'),
+    historyApiFallback: true,
     hot: true,
 
     watchOptions: {
