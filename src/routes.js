@@ -1,7 +1,7 @@
-import { News } from './components/News';
-import { NewsCategory } from './components/NewsCategory';
-import { Home } from './components/Home';
-import { Root } from './components/Root';
+import { News } from './pages/News';
+import { NewsCategory } from './pages/NewsCategory';
+import { Home } from './pages/Home';
+import { Root } from './pages/Root';
 
 const routes = [
   {
