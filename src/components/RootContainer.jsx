@@ -1,13 +1,14 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
+import { history } from '../core/history';
 import routes from '../routes';
 
 function RootContainer() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       { renderRoutes(routes) }
-    </BrowserRouter>
+    </Router>
   );
 }
 
