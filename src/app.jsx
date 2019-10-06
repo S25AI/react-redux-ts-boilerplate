@@ -24,7 +24,7 @@ const render = (Component, data) => {
 };
 
 init()
-  .then((data) => {
+  .then(data => {
     render(RootContainer, data);
 
     if (module.hot) {

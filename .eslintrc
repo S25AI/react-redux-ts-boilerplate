@@ -1,6 +1,7 @@
 {
-  "extends": "airbnb",
-  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true
   },
@@ -9,6 +10,7 @@
     "import/prefer-default-export": 0,
     "comma-dangle": 0,
     "react/prop-types": 0,
-    "react/jsx-one-expression-per-line": 0
+    "react/jsx-one-expression-per-line": 0,
+    "arrow-body-style": 0
   }
 }

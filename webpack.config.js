@@ -20,7 +20,7 @@ const commonConfig = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
@@ -38,6 +38,12 @@ const commonConfig = {
             options: {sourceMap: dev}
           }
         ]
+      },
+
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader'
       },
 
       {
@@ -87,7 +93,7 @@ if (dev) {
 if (withLinter) {
   commonConfig.module.rules.push({
     enforce: "pre",
-    test: /\.jsx?$/,
+    test: /\.(jsx?|tsx?)$/,
     exclude: /node_modules/,
     loader: 'eslint-loader'
   });
