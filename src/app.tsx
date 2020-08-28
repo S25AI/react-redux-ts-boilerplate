@@ -10,7 +10,7 @@ import { history } from './core/history';
 import configureStore from './store';
 import './style.css';
 
-const render = (Component, data) => {
+const render = (Component: any, data: any) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={configureStore()}>

@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createRootReducer from '../reducers';
 import { history } from '../core/history';
 
-export default function configureStore(preloadedState) {
+export default function configureStore(preloadedState: any = {}) {
   const store = createStore(
     createRootReducer(history), // root reducer with router state
     preloadedState,

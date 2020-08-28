@@ -4,7 +4,12 @@ const initialState = {
   title: 'hello'
 };
 
-function test(state = initialState, action) {
+interface IAction {
+  type: string,
+  payload: any
+}
+
+function test(state = initialState, action: IAction) {
   switch (action.type) {
     case TEST_CHANGE_TEXT:
       return { ...state, title: action.payload };
