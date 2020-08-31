@@ -1,8 +1,4 @@
-import React from 'react';
-import { renderRoutes } from 'react-router-config';
+import React from "react";
+import { renderRoutes } from "react-router-config";
 
-export const Root = ({ route }: any) => (
-  <>
-    {renderRoutes(route.routes)}
-  </>
-);
+export const Root = ({ route }: any) => <>{renderRoutes(route.routes)}</>;

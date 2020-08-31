@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
-import { ConnectedRouter } from 'connected-react-router';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { AppContainer } from "react-hot-loader";
+import { ConnectedRouter } from "connected-react-router";
 
-import { RootContainer } from './components/RootContainer';
-import { init } from './core/init';
-import { history } from './core/history';
-import configureStore from './store';
-import './style.css';
+import { RootContainer } from "./components/RootContainer";
+import { init } from "./core/init";
+import { history } from "./core/history";
+import configureStore from "./store";
+import "./style.css";
 
 const render = (Component: any, data: any) => {
   ReactDOM.render(
@@ -19,16 +19,16 @@ const render = (Component: any, data: any) => {
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
-    document.getElementById('root'),
+    document.getElementById("root")
   );
 };
 
 init()
-  .then(data => {
+  .then((data) => {
     render(RootContainer, data);
 
     if (module.hot) {
-      module.hot.accept('./components/RootContainer', () => {
+      module.hot.accept("./components/RootContainer", () => {
         render(RootContainer, data);
       });
     }

@@ -1,12 +1,12 @@
-import { TEST_CHANGE_TEXT } from '../constants/test';
+import { TEST_CHANGE_TEXT } from "../constants/test";
 
 const initialState = {
-  title: 'hello'
+  title: "hello"
 };
 
 interface IAction {
-  type: string,
-  payload: any
+  type: string;
+  payload: any;
 }
 
 function test(state = initialState, action: IAction) {

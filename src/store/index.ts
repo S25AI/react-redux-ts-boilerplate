@@ -1,9 +1,9 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import { routerMiddleware } from 'connected-react-router';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import createRootReducer from '../reducers';
-import { history } from '../core/history';
+import { createStore, applyMiddleware } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { routerMiddleware } from "connected-react-router";
+import { composeWithDevTools } from "redux-devtools-extension";
+import createRootReducer from "../reducers";
+import { history } from "../core/history";
 
 export default function configureStore(preloadedState: any = {}) {
   const store = createStore(
