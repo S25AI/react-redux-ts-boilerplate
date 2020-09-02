@@ -7,10 +7,14 @@ import { ConnectedRouter } from "connected-react-router";
 import { RootContainer } from "./components/RootContainer";
 import { init } from "./core/init";
 import { history } from "./core/history";
-import configureStore from "./store";
+import configureStore from "./store/index";
 import "./style.css";
 
-const render = (Component: any, data: any) => {
+interface IProps {
+  data: any;
+}
+
+const render = (Component: React.FunctionComponent<IProps>, data: any) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={configureStore()}>

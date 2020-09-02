@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { RouteComponentProps } from "react-router";
 
 interface TestProps {
@@ -8,7 +8,7 @@ interface TestProps {
 
 interface MatchProps extends RouteComponentProps<any> {}
 
-export const NewsCategory = ({ match }: MatchProps) => {
+export const NewsCategory: React.FC<MatchProps> = ({ match }) => {
   return (
     <>
       <h2>This is {match.params.id} page</h2>
@@ -17,7 +17,7 @@ export const NewsCategory = ({ match }: MatchProps) => {
   );
 };
 
-const Test = ({ name, title }: TestProps) => {
+const Test: React.FC<TestProps> = ({ name, title }) => {
   return (
     <>
       <div>{name}</div>
